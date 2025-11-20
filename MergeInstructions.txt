@@ -1,0 +1,6 @@
+How to merge as beginner:
+- git branch jadoube
+- git switch jadoube
+Add files, adjustments, new features, commit changes on the branch
+- git switch main
+- git merge main -m "[adjustments]" [branch] (i.e. git merge -main -m "Added .htm" jadoube)
