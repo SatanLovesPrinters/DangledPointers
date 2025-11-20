@@ -1,0 +1,3 @@
+Issues raised should be proposed as pull requests instead of comitted to the main branch.
+- Pulls create a new branch that allow for a branch to then be merged.
+- This allows code review to occur prior to immediate implementation. 
