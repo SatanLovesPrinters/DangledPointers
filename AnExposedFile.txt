@@ -1,2 +1,2 @@
 An Exposed .txt (no .gitignore)
-- Post Merge: Adjusted on the main file as a test to merge conflicts on alternate branches.
+- Post Merge: Adjusted on the main file as a test to merge conflicts on alternate branches. (Added in main)
