@@ -1,5 +1,4 @@
 # https://programming-25.mooc.fi/part-1
-
 # getting started
 
 print (":-)")
@@ -114,3 +113,44 @@ if name_JerryCheck != 'Jerry':
     
     print(f"The total cost is {cost * soupPortion}")
     print("Next please!")
+
+
+#string determined operations
+
+num1 = int(input("Number 1: "))
+num2 = int(input("Number 2: "))
+opReq = str(input("Operation: "))
+
+if opReq == 'add':
+    print(f"{num1} + {num2} = {num1 + num2}")
+if opReq == 'subtraction':
+    print(f"{num1} - {num2} = {num1 - num2}")
+if opReq == 'multiply':
+    print(f"{num1} * {num2} = {num1 * num2}")
+if opReq == 'division':
+    print(f"{num1} / {num2} = {num1 / num2}")
+
+# Temp Conversion
+inputTemp = int(input("Please type in a temperature (F): "))
+tempF_to_C = ((inputTemp - 32) / (9/5))
+
+if tempF_to_C < 0:
+    print(f"{inputTemp} degrees Fahrenheit equals {tempF_to_C} degrees Celsius ")
+    print("Brr! It's cold in here!")
+
+if tempF_to_C >= 0:
+    print(f"{inputTemp} degrees Fahrenheit equals {tempF_to_C} degrees Celsius ")
+
+### Closing Section (Part 1) ###
+
+from math import sqrt
+
+a = float(input("Value of a: "))
+b = float(input("Value of b: "))
+c = float(input("Value of c: "))
+
+# solve ax^2 + bx + c 
+
+x_pos = (-b + (sqrt(b**2 - (4*a*c))))/(2*a)
+x_neg = (-b - (sqrt(b**2 - (4*a*c))))/(2*a)
+print (f"The roots are {x_pos} and {x_neg}")
