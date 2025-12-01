@@ -1,11 +1,11 @@
 # https://programming-25.mooc.fi/part-2
 ## Terminology
 
-name = "Optimus Prime"
+name = "I am a printer!"
 age = 18
 
-if name == "Optimus Prime": #Conditional Statement
-    print("Hi!")            #Print Statement
+if name == "I am a printer!": #Conditional Statement
+    print("Go away printer!")            #Print Statement
     number = 2              #Assignment Statement
 
 if age > 17: 
@@ -135,7 +135,6 @@ elif (year % 100 == 0) and (year % 400 != 0): #year is divisible by 100 but not 
     print("That year is not a leap year.")
 elif (year % 400 == 0):  # year is divisible by 400 
    print("That year is a leap year.")
-
 else:
     print("That year is not a leap year.")
 
@@ -224,3 +223,107 @@ while True:
         break
         
 print("okay then")
+
+#Password bool check
+password = input("Password: ")
+passwordConfirmed = False
+
+while passwordConfirmed == False:
+    passwordConfirmation = input("Repeat password: ")
+
+    if password == passwordConfirmation:
+        passwordConfirmed = True
+    else:
+        print("They do not match!")
+
+print("User account created!")
+
+#Pin Check 
+
+pin_set = 4321
+pin_guess = False
+pin_counter = 0
+
+while pin_guess == False:
+    
+    pin_check = int(input("PIN: "))
+    
+    if pin_check == pin_set and pin_counter == 0:
+        print(f"Correct! It only took you one single attempt!")
+        pin_guess = True
+    elif pin_check == pin_set and pin_counter > 0:
+        pin_counter += 1
+        print(f"Correct! It took you {pin_counter} attempts")
+        pin_guess = True
+    elif pin_check != pin_set:
+        print("Wrong")
+        pin_counter += 1
+
+# enter a year, determine if it's a leap year & then print out the next leap year (Took ~4-5 hours & the results were not optimal, failed & resulted in finding the solution)
+# key takeaways: break, while True, simplifying the issue
+# the firstValue was always going to be set, to avoid this immediately increment the input by 1 & then start looking for the next leap year. 
+
+year_start = int(input("Year: "))
+year = year_start + 1
+
+while True:
+    if year % 100 == 0: # divis by 100 
+        if year % 400 == 0: #divis by 100 and 400 = leapyear
+            break       #if year is found, stop the loop (?)
+    elif year % 4 == 0: # only divis by 4 = leap year, stop the loop
+        break
+ 
+    year += 1
+ 
+print(f"The next leap year after {year_start} is {year}")
+
+#enter words, exit on end or double entered word. print out story
+prev_word = ""
+story_sentence = ""
+
+while True:
+    story_input = str(input("Please type in a word: "))
+      
+    if story_input == 'end' or story_input == prev_word:
+        break
+    else:
+        prev_word = story_input
+        story_sentence += story_input + " "
+    
+print(f"{story_sentence}")
+
+# asks user for integers until 0 is entered
+
+numbers_list = ""
+numbers_counter = 0
+numbers_sum = 0
+numbers_sum_total = 0
+numbers_mean = 0
+numbers_pos_count = 0
+numbers_neg_count = 0
+
+print("Please type in integer numbers. Type in 0 to finish.")
+
+while True:  
+
+    numbers_input = int(input("Number: "))
+
+    if numbers_input == 0:
+        break
+    if numbers_input > 0:
+        numbers_pos_count += 1   
+    if numbers_input < 0:
+        numbers_neg_count += 1
+   
+    numbers_counter += 1                #add to count
+    numbers_sum = numbers_input    #convert input to integers 
+    numbers_sum_total += numbers_sum    #add the sum to the previous sum
+    numbers_mean = numbers_sum_total / numbers_counter
+
+if numbers_input == 0:
+    print(f"Numbers typed in {numbers_counter}")
+    print(f"The sum of the numbers is {numbers_sum_total}")
+    print(f"The mean of the numbers is {numbers_mean}")
+    print(f"Positive numbers {numbers_pos_count}")
+    print(f"Negative numbers {numbers_neg_count}")
+
