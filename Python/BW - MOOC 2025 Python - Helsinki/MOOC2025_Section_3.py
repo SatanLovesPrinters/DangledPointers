@@ -106,3 +106,136 @@ elif len(message1) < len(message2):
     print(f"{message2} is longer")
 else:
     print("The strings are equally long")
+
+# length - 1 = lasts in list
+
+input_string = input("Please type in a string: ")
+index = 0
+counter = 0
+
+while index < len(input_string):
+    if len(input_string) > 0:
+        print(input_string[counter-1])
+        counter -= 1
+        index += 1
+    else:
+        print("The input string is empty. There is no first character")
+        break
+
+# Grid of hashes
+
+width = int(input("Width: "))
+height = int(input("Height: "))
+
+symbol = "#"
+
+while height > 0: 
+    print(symbol * width)
+    height -= 1
+
+# Underlining
+
+input_string = input("Please type in a string: ")
+empty = ''
+symbol = '-'
+
+while input_string != empty:
+       print(input_string)
+       print(len(input_string)*symbol)
+       input_string = input("Please type in a string: ")
+
+# Right-aligned with 20 characters
+
+string_input = input("Please type in a string: ")
+char_limit = 20
+symbol_limit = char_limit - len(string_input)
+symbol_input = symbol_limit * '*'
+
+if len(string_input) < char_limit:
+    print(f"{symbol_input}{string_input}")
+
+# frame a word
+
+word = input("Word: ")
+char_limit = 30
+char_symbol = '*'
+
+filler_space = int(char_limit - len(word) -2)//2 #total space, subtract our word, divide that for each side of empty space : -2 for 1* on each side. 
+filler_string = ' ' * filler_space
+
+border = char_limit * char_symbol
+
+custom_row_odd = f"*{filler_string}{word}{filler_string} *"
+custom_row_even = f"*{filler_string}{word}{filler_string}*"
+
+if len(word) % 2 == 0:
+    print(border)
+    print(custom_row_even)
+    print(border)
+
+elif len(word) % 2 != 0:
+    print(border)
+    print(custom_row_odd)
+    print(border)
+
+# splicing, substrings
+input_string = "XeroxTheMightyWingDinger"
+print(input_string[0:3])
+print(input_string[4:10])
+print(input_string[:3])
+print(input_string[4:])
+print(input_string[::-1])
+
+#substrings part 1
+input_string = input("Please type in a string: ")
+index = 0
+
+while index < len(input_string):
+    index += 1
+    print(input_string[0:index])
+
+#substrings part 2
+input_string = input("Please type in a string: ")
+limit = len(input_string)
+index = 0
+counter_index = 0
+
+
+while index < len(input_string): # For TEST: While 0 < 4
+    counter_index -= 1             #counterIndex = -1
+    print(input_string[counter_index:limit]) 
+    index += 1
+
+# searching slices
+
+input_string = "test"
+
+print("t" in input_string)     ## True
+print("x" in input_string)     ## False
+print("es" in input_string)    ## True
+print("ets" in input_string)   ## False
+
+# searching substrings/slices example
+
+input_string = "perpendicular"
+while True:
+    substring = input("What are you looking for (eg: Perpendicular): ")
+    if substring in input_string:
+        print("Found it")
+    else:
+        print("Not found")
+
+# vowel check v2.0 
+
+input_string = input("Please type in a string: ")
+vowels = "aeo"
+index = 0
+
+while index < len(vowels):
+    vowel = vowels[index]
+
+    if vowel in input_string:
+        print(vowel, "found")
+    else:
+        print(vowel, "not found")
+    index += 1
