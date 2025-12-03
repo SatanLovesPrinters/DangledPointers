@@ -310,3 +310,51 @@ while index >= 0:                                       #While substring is foun
 
 if index == -1:
     print("The substring does not occur twice in the string.")
+
+# More about loops!
+
+number = int(input("Please type in a number: "))
+
+while number > 0:
+    i = 0 
+    while i < number:
+        print(f"{i} ", end="")
+        i += 1
+    print("")
+    number -=1
+
+# Print a multiplication table for the number
+number = int(input("Please type in a number: "))
+xVal = 1
+
+while xVal <= number:
+    yVal = 1
+    while yVal < number:
+        print(f"{xVal} x {yVal} = {xVal*yVal}")
+        yVal += 1
+    print(f"{xVal} x {yVal} = {xVal*yVal}")
+    xVal += 1
+
+#first letter of words (non-book approach)
+
+sentence = "Humpty Dumpty sat on a wall" 
+words = sentence.split()
+
+for letter in words:
+    if letter:
+        print(letter[0])
+
+    #first letter of words (nested loop approach)
+
+sentence_input = input("Please type in a sentence") # "Ran to the store" 
+sentence_input = " " + sentence_input               # " Ran to the store"                Add a space to the start for handling purposes
+
+    #Setup starting index. 
+index = 1
+while index < len(sentence):
+    if sentence_input[index-1] == " " and sentence_input[index] != " ":         #If the spot before is a blank space (which at start is due to above)
+        print(sentence_input[index])                                            #and if the current spot is a letter, then print out the current letter 
+    index +=1
+
+#Factorials
+
