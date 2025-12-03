@@ -239,3 +239,74 @@ while index < len(vowels):
     else:
         print(vowel, "not found")
     index += 1
+
+# use of find()
+
+input_string = "test"
+
+print(input_string.find("t")) # 0 (at [0]) note this is finding the next occurrence, not all  
+print(input_string.find('x')) # -1 (-1 = not found)
+print(input_string.find("es")) # 1 (at [1])
+print(input_string.find("ets")) # -1 (not found)
+
+
+# iterating a substring search
+
+input_string = "perpendicular"
+
+while True:
+    substring = input("What are you looking for?: ")
+    index = input_string.find(substring)
+    if index >= 0:
+        print(f"Found it at the index {index}")
+    else:
+        print("Not found")
+
+# find the character & print the next 2 values after it (if none, exits program)
+word = input("Please type in a word: ")
+index = 0
+
+while index < len(word): 
+    substring = input("Please type in a character: ")
+    index = word.find(substring) #jump to the character place we want
+    if index + 2 > len(word):
+        break
+    elif index + 2 < len(word):
+        print(word[index:index+3])
+        break
+    else:
+        break
+
+# find all sub strings (Joined the Python discord & spent ~6 hours working through this syntax)
+
+word = input("Word: ")
+substring = input("What are you looking for? ")
+
+index = word.find(substring)
+
+while index >= 0 and (index + 2 < len(word)):              
+    
+    print(word[index:index+3])
+    index += 1
+    index = word.find(substring,index)
+
+# find 2nd occurrences 
+
+string_input = input("Please type in a string: ")       #Input a string
+substring = input("Please type in a substring: ")       #Input substring
+index = string_input.find(substring)                    #Index starts at the first occurrence of requested substring
+counter = 1
+
+while index >= 0:                                       #While substring is found
+    
+    if counter < 2:
+        counter += 1
+        index += 1
+        index = string_input.find(substring,index+len(substring))   #find (in word) the (substring,from substring location + substring length)
+       
+    elif counter == 2:
+        print(f"The second occurrence of the substring is at index {index}.")
+        break
+
+if index == -1:
+    print("The substring does not occur twice in the string.")
