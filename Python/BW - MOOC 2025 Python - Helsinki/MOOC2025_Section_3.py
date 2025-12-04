@@ -357,4 +357,18 @@ while index < len(sentence):
     index +=1
 
 #Factorials
+while True:
+    number = int(input("Number: "))
 
+    if number <= 0:
+        print("Thanks and bye!")
+        break
+    elif number > 0:                           
+        counter = number - 1                #counter = 5 - 1
+        val_stored = number * 1             #Start the count from 1
+    
+        while counter != 0:
+            val_stored = val_stored * counter   #val_stored = 20 : val_stored * next increment (3)
+            counter -= 1                        # repeat: val_stored = 60*2
+    
+        print(f"The factorial of the number {number} is {val_stored}")
