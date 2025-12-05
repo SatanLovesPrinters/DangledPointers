@@ -374,3 +374,124 @@ while True:
             counter -= 1                        # repeat: val_stored = 60*2
     
         print(f"The factorial of the number {number} is {val_stored}")
+
+#Overkilled Flipped Pairs
+#i.e. 5 = 2 1 4 3 5 | 1 (start) 2 3 4 5
+
+number = int(input("Please type in a number: "))
+
+startVal = 1
+nextVal = startVal+1
+tempVal = 1
+counter = 1 
+
+while counter <= number:
+        
+    if counter == number and tempVal == counter:
+        print(tempVal)
+        break
+    elif counter == number and tempVal > counter:
+        print(number)
+        break
+    elif startVal < nextVal:
+        print(nextVal)
+        tempVal = startVal
+        counter += 1
+        startVal += 1
+    elif startVal > tempVal:
+        print(tempVal)
+        startVal += 1
+        tempVal = startVal
+        nextVal = startVal+1
+        counter += 1
+
+# Instructor Solution to Flip_the_Pairs: (NB: Note bene)
+number = int(input("Please type in a number: "))
+   
+index = 1
+while index+1 <= number:
+    print(index+1)
+    print(index)
+    index += 2
+
+if index <= number:
+    print (index)
+
+#Alternating pairs by the limit set
+number = int(input("Please type in a number: "))
+   
+index = 1
+tempVal = number
+
+while index <= number:
+   if index > tempVal:
+       break
+   elif index == tempVal:
+       print(tempVal)
+       break
+   print(index)
+   print(tempVal)
+   index += 1
+   tempVal -= 1
+    
+def first_character(text):  #functions should always called at the top of the code, these are listed for section notes when transferred out of the scrapbook/testing zone.  
+    print(text[0], text[2:3])
+
+def squared(x):
+    print(f"The square of the number {x} is {x*x}")
+
+def sum(x, y):
+    result = x+y
+    print(f"The sum of the arguments {x} and {y} is {result}")
+
+def mean(x, y, z):
+    result = (x+y+z)/3
+    print(result)
+
+# testing the function:
+if __name__ == "__main__":
+    first_character('python')
+    first_character('yellow')
+    first_character('tomorrow')
+    first_character('heliotrope')
+    first_character('open')
+    first_character('night')
+
+    squared(2)
+    squared(5)
+
+    x = 100
+    y = 30
+    sum(1,2)
+    sum(x + y,10)
+    mean(5, 2, 1)
+
+#Print_Many_Times 
+def print_many_times(text, times):
+    text = f"{text}\n"
+    result = text * times
+    print(result)
+
+if __name__ == "__main__":
+    print_many_times("python", 5)
+
+    #Solution / Instructor Submitted Solution (NB: Note Bene)
+
+def print_many_times(text, times):
+    while times > 0:
+        print(text)
+        times -= 1
+
+#square of hashes function
+
+def hash_square(length):
+    column = 0
+    symbol = "#"
+    row_result = symbol * length
+
+    while column < length:
+        print(row_result)
+        column += 1
+
+if __name__ == "__main__":
+    hash_square(5)
