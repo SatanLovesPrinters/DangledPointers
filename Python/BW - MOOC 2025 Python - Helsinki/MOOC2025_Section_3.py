@@ -360,9 +360,11 @@ while index < len(sentence):
 while True:
     number = int(input("Number: "))
 
-    if number <= 0:
+    if number < 0:
         print("Thanks and bye!")
         break
+    elif number == 1:
+        print(f"The factorial of the number {number} is {number}")
     elif number > 0:                           
         counter = number - 1                #counter = 5 - 1
         val_stored = number * 1             #Start the count from 1
