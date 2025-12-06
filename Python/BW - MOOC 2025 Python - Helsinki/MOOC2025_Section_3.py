@@ -495,3 +495,55 @@ def hash_square(length):
 
 if __name__ == "__main__":
     hash_square(5)
+
+#Create a chessboard based on the specified length
+def chessboard(length):
+    row = length
+    column = length
+    index = 0
+    column_index = 0
+
+    while column_index < length: 
+        index = 0
+
+        if column_index % 2 == 0:
+            print(1, end="")
+            index += 1
+
+            while index < length:
+            
+             if index % 2 == 0:
+                print(1, end="")
+             else:
+                print(0, end="")
+             index += 1
+
+        elif column_index % 2 != 0:
+            print(0, end="")
+            
+            while index < length-1:
+            
+             if index % 2 == 0:
+                print(1, end="")
+             else:
+                print(0, end="")
+             index += 1        
+        
+        print()
+        column_index += 1
+        
+            
+if __name__ == "__main__":
+    chessboard(6)
+
+###Instructor solution to chessboard
+def chessboard(size):
+    i = 0
+    while i < size:
+        if i % 2 == 0:
+            row = "10"*size
+        else:
+            row = "01"*size
+        # Remove extra characters at the end of the row
+        print(row[0:size])
+        i += 1

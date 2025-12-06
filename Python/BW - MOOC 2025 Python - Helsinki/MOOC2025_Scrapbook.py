@@ -1,27 +1,13 @@
 # https://programming-25.mooc.fi/part-3
-# WIP | Need to get the columns to alternate between result output. 
+# WIP | Figure out string continuation (Limit is determined, using python logic to keep printing until the limit is met is not known as of now. )
 
-def chessboard(length):
-    row = length
-    column = length
-    row_results = ""
-    index = 0
-    column_index = 0
+def squared(text, times):
+    rowLimit = times          #how many spaces we can take up
+    boxLimit = times**2       #repeat text until all spaces taken up
+    
+    if len(text) < rowLimit:
+        ...
 
-    while column_index < length: 
-               
-        while index < length:
-            
-            if index % 2 == 0:
-                row_results += "1"
-                index += 1
-            else:
-                row_results += "0"
-                index += 1
-        
-        print(f"{row_results}")
-        column_index += 1
 
-            
 if __name__ == "__main__":
-    chessboard(6)
+    squared("ab", 3)
