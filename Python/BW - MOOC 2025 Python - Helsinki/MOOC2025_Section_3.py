@@ -1,4 +1,10 @@
-# https://programming-25.mooc.fi/part-3
+### https://programming-25.mooc.fi/part-3
+### Start Date:         12/01/2025
+### Completion Date:    12/10/2025
+### Review / POW:
+### - For Loops & implementing end of line conditions (Lines 499-562/Strings+functions).
+### - Nested conditionals 
+### - MODULO PROJECT LINE 585
 
 # Iteration variables: init > condition > update
 a = int(input("Type in a number: "))        #initilization 
@@ -547,3 +553,49 @@ def chessboard(size):
         # Remove extra characters at the end of the row
         print(row[0:size])
         i += 1
+
+#Squared Solution
+def squared(text, val):
+    boxField = ""               #define a box
+    boxLimit = val**2         #determine how large the field is
+       
+    for i in range(boxLimit):   #determine each value in the box | for each value (i) in range, of the limit defined previously, add the value (i) into place
+        boxField +="\n"*(i%val==0)*(i!=0) # create a new line when the value being iterated meets the "end of line condition"
+        boxField += text[i%len(text)]
+
+    print(boxField)
+
+#Instructor Solution
+def squared(characters, size):
+    i = 0
+    row = ""
+    while i < size * size:
+        if i > 0 and i % size == 0:     #if i greater than starting index & when mod max == 0 (end of line) print that row and reset the row index back to empty ""
+            print(row)
+            row = ""
+        row += characters[i % len(characters)] # row = "" + "stringThing"[i % length of string] | row = "" + "stringThing"[3%4] | row = "" + "stringThing[3]" | row = "r", += r to the string
+        i += 1
+    print(row)
+
+if __name__ == "__main__":
+    squared("acdf", 5)
+
+# Section 3 Post Completion Practice:
+
+def SimpleSomethingModulo(high, low):
+    a = high
+    b = low
+    
+    while b <= a:
+        message = f"A mod B: {a} % {b} = {a % b} || B mod A: {b} % {a} = {b % a}"    
+        print(message)
+        b += 1
+        lineSep = len(message) * "-"
+    
+    print(lineSep)
+
+if __name__ == "__main__":
+
+    SimpleSomethingModulo(10, 1)
+    SimpleSomethingModulo(10, 2)
+    SimpleSomethingModulo(25, 5)
