@@ -3,3 +3,7 @@ course = "mooc-programming-25"
 [exercises.part03-34_word_squared]
 id = 272833
 checksum = "0e6a2ffcf604f2f71c1f64e5a1842317"
+
+[exercises.part04-01_hello_visual_studio_code]
+id = 272896
+checksum = "53f03b6ad926b8a798faf5acc5c1c1b5"
