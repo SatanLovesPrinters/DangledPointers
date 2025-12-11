@@ -1,9 +1,20 @@
-# Copy here code of line function from previous exercise
+def line(val, string):
+    
+    if len(string) >= 1:
+        string = string[0]
+    elif len(string) == 0:
+        string = "*"
+    res = val * string
+    print(res)
 
 def square(size, character):
-    # You should call function line here with proper parameters
-    line(4, "x")
 
-# You can test your function by calling it within the following block
+    i = 0
+    while i < size:
+        line(size, character)
+        i += 1
+
 if __name__ == "__main__":
     square(5, "x")
+    print()
+    square(3, "o")

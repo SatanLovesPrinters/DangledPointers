@@ -1,9 +1,20 @@
-# Copy here code of line function from previous exercise
+def line(val, string):
+    
+    if len(string) >= 1:
+        string = string[0]
+    elif len(string) == 0:
+        string = "*"
+    res = val * string
+    print(res)
 
 def triangle(size):
-    # You should call function line here with proper parameters
-    line(4, "#")
+    
+    i = 0
+    while i <= size:
+        line(i, "#")
+        i += 1
 
-# You can test your function by calling it within the following block
 if __name__ == "__main__":
-    triangle(5)
+    triangle(6)
+    print()
+    triangle(3)
