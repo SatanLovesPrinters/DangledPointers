@@ -1,4 +1,9 @@
-# Write your solution here
+def range_of_list(my_list : list):
+    greatest = max(my_list)
+    smallest = min(my_list)
+    rangeVal = greatest - smallest
+    return rangeVal
+
 # You can test your function by calling it within the following block
 if __name__ == "__main__":
     my_list = [3, 6, -4]

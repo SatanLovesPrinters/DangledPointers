@@ -140,6 +140,8 @@ if __name__ == "__main__":
     SimpleSomethingModulo(10, 1)
     SimpleSomethingModulo(6, 1)
 
+
+#Lists Exercises
 my_list: int = list[int]
 seconds_list: int = list[int]
 
@@ -167,3 +169,71 @@ while True:
     
     else:
         print(f"My List: {my_list} | Seconds list: {seconds_list}")
+
+#Lists Exercises
+values = []
+i = 1
+
+while True:
+    
+    print(f"The list is now {values}")
+    inputChoice = input("a(d)d, (r)emove, e(x)it: ")
+    if inputChoice == 'd': #add
+        values.append(i)
+        i += 1
+    elif inputChoice == 'r': #remove
+        i -= 1
+        values.remove(i)
+    elif inputChoice == 'x': #exit
+        break
+
+print("Bye!")    
+
+# Same word twice exercise 
+counter = 0
+words = []
+
+while True:
+    word = input("Word: ")
+    if word not in words:
+        words.append(word)
+        counter += 1
+    elif word in words:
+        print(f"You typed in {counter} different words")
+        break
+
+
+# List / Ordered List
+currentList = []
+
+while True:
+    item = int(input("New item: "))
+    
+    if item == 0:
+        print("Bye!")
+        break
+    elif item != 0:
+        currentList.append(item)
+        orderedList = sorted(currentList)
+        print(f"The list now: {currentList}")
+        print(f"The list in order: {orderedList}")
+
+# Back to functions!
+
+def length(x):
+    return len(x)
+
+if __name__ == "__main__":
+    my_list = [3, 6, -4]
+    result = length(my_list)
+    print(result)
+
+# Arithmetic mean
+def mean(my_list : int):
+    result = sum(my_list) / len(my_list)
+    return result
+
+if __name__ == "__main__":
+    my_list = [3, 6, -4]
+    result = mean(my_list)
+    print(result)

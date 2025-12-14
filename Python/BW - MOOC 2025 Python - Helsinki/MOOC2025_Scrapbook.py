@@ -1,18 +1,12 @@
 # https://programming-25.mooc.fi/part-4
 
-values = []
+def range_of_list(my_list : list):
+    greatest = max(my_list)
+    smallest = min(my_list)
+    rangeVal = greatest - smallest
+    return rangeVal
 
-while True:
-    i = 0 
-    inputChoice = input("a(d)d, (r)emove, e(x)it: ")
-    if inputChoice == 'd': #add
-        values.append(1+i)
-        i += 1
-        print(f"The list is now {values}")
-    elif inputChoice == 'r': #remove
-        values.remove(1-i)
-        i -= 1
-        print(f"The list is now {values}")
-    elif inputChoice == 'x': #exit
-        print("Bye!")
-        break
+if __name__ == "__main__":
+    my_list = [1, 2, 3, 4, 5]
+    result = range_of_list(my_list)
+    print("The range of the list is", result)

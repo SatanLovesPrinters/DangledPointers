@@ -1,15 +1,17 @@
 values = []
+i = 1
 
 while True:
-    inputChoice = input("a(d)d, (r)emove, e(x)it")
+    
+    print(f"The list is now {values}")
+    inputChoice = input("a(d)d, (r)emove, e(x)it: ")
     if inputChoice == 'd': #add
-        values.append(1)
-        print(f"The list is now {values}")
+        values.append(i)
+        i += 1
     elif inputChoice == 'r': #remove
-        values.remove[1]
-        print(f"The list is now {values}")
+        i -= 1
+        values.remove(i)
     elif inputChoice == 'x': #exit
-        print("Bye!")
         break
 
-# remove item
+print("Bye!")    
