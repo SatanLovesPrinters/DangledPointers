@@ -312,4 +312,13 @@ def main():
             print("that wasn't a palindrome")
             
 main() #<---------------Took an hour to notice what had happened. Even though the if code block had been omitted. 
-# This is still needed to  call the function in.
+# This is still needed to  call the function in
+# Unique find on sum of positives: the ability to go left to right is slight inhibited from 
+def sum_of_positives(intList):
+
+    for x in intList[::-1]:
+        if x <= 0:
+            intList.remove(x)
+    return sum(intList)
+
+# 
