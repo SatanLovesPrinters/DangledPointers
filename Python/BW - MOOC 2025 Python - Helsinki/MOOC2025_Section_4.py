@@ -237,3 +237,52 @@ if __name__ == "__main__":
     my_list = [3, 6, -4]
     result = mean(my_list)
     print(result)
+
+# Range
+def range_of_list(my_list : list):
+    greatest = max(my_list)
+    smallest = min(my_list)
+    rangeVal = greatest - smallest
+    return rangeVal
+
+if __name__ == "__main__":
+    my_list = [1, 2, 3, 4, 5]
+    result = range_of_list(my_list)
+    print("The range of the list is", result)
+
+# List integers from - to + 
+
+valinput = int(input("Please type in a positive integer: "))
+
+for i in range(-(valinput),valinput+1):
+    if i == 0:
+        i += 1
+    else:
+        print(i)
+        i += 1
+# Creates ... you guessed it... a list of stars
+def list_of_stars(intList):
+    for intVal in intList:
+        print(intVal * "*")
+if __name__ == "__main__":
+    list_of_stars([3,7,1,1,2])
+
+#anagrams
+def anagrams(strVal1, strVal2):
+    sortedList1 = sorted(strVal1)
+    sortedList2 = sorted(strVal2)
+    if sortedList1 == sortedList2:
+        return True
+    else:
+        return False
+#anagrams one liner
+def instructor_anagrams(string1: str, string2: str):
+    return sorted(string1) == sorted(string2)
+
+if __name__ == "__main__":
+
+    print(anagrams("tame", "meta")) # True
+    print(anagrams("tame", "mate")) # True
+    print(anagrams("tame", "team")) # True
+    print(anagrams("tabby", "batty")) # False
+    print(anagrams("python", "java")) # False
