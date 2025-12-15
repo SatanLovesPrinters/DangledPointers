@@ -107,7 +107,6 @@ def last_word(text):
     sentenceList = text.split()
     return sentenceList[-1]
 
-
 # the instructor solution uses a count & then passes the count into each function. Super creative. 
 # I switched to using lists because it seemed easier than tracking the empty spaces.
 
@@ -286,3 +285,31 @@ if __name__ == "__main__":
     print(anagrams("tame", "team")) # True
     print(anagrams("tabby", "batty")) # False
     print(anagrams("python", "java")) # False
+
+#Functioning Palindromes (attempt to not use __main__ v1)
+def getStringInput():
+    strInput = input("Please type in a palindrome: ")        
+    strValue = strInput
+    return strValue
+
+def palindromes(word):
+    
+    if word == word[::-1]:
+        return True
+    elif word != word[::-1]:
+        return False
+    
+def main():
+
+    while True:
+        word = input("Please type in a palindrome: ")
+        palindromes(word)
+
+        if palindromes(word) == True:
+            print(f"{word} is a palindrome!")
+            break
+        elif palindromes(word) == False:
+            print("that wasn't a palindrome")
+            
+main() #<---------------Took an hour to notice what had happened. Even though the if code block had been omitted. 
+# This is still needed to  call the function in.
