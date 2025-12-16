@@ -1,10 +1,11 @@
 ### https://programming-25.mooc.fi/part-4
 ### Start Date:         12/10/2025
-### Completion Date:    -
+### Completion Date:    12/16/2025
 ### Review / POW:
 ### - Iterating on a specific condition | Escaping on a specific index (Resolved with Discord review on Modulo %)
-### - 
-### - 
+### - type-hinting
+### - Iterating forward through a list
+
 # Quick intro on string conversion
 # Utilize dir() for help in the python console
 
@@ -301,12 +302,44 @@ def no_shouting(my_string):
             no_uppers.append(letter)
     return no_uppers
 
+def longest_series_of_neighbours(my_list):
+    num_neighbors_count = 0
+    num_neighbors_max = 0
+    
+    for num1, num2 in zip(my_list, my_list[1:]):
+        if num1+1==num2 or num1-1==num2:
+            num_neighbors_count += 1
+            if num_neighbors_count >= num_neighbors_max:
+                    num_neighbors_max = num_neighbors_count
+        else:
+            if num_neighbors_count >= num_neighbors_max:
+                    num_neighbors_max = num_neighbors_count
+            num_neighbors_count = 0
+            
+    return num_neighbors_max+1 # This was a cheap approach due to my approach checking each pair. 
+
+def instructor_longest_series_of_neighbours(my_list: list): #This is the accurate approach. To find difference between two numbers use abs(a-b).
+    longest = 1
+    result = 1
+    for i in range(1, len(my_list)):
+        # function abs calculates the absolute value
+        if abs(my_list[i-1]-my_list[i]) == 1:
+            result += 1
+        else:
+            result = 1
+        # function max returns the highest of the parameters
+        longest = max(longest, result)
+    return longest
+
+
+
 names =  [ "Larry", "Jean", "Katherine", "Paul" ]
 first_string = "abcdbde" # b
 second_string = "exemplaryelementary" #e
 my_string = "this is an example"
 my_list = [3, 2, 2, 1, 3, 3, 1]
 my_list_2 = ["ABC", "def", "UPPER", "ANOTHERUPPER", "lower", "another lower", "Capitalized"]
+my_list_3 = [1, 2, 3, 4]
 
 a = [1,2,3]
 b = [7,8,9]
@@ -322,3 +355,4 @@ print(most_common_character(first_string))
 print(most_common_character(second_string))
 pruned_list = no_shouting(my_list_2)
 print(pruned_list)
+print(longest_series_of_neighbours(my_list_3))

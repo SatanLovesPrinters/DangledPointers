@@ -1,3 +1,6 @@
+# https:/programming-25.mooc.fi/part-4
+# End of chapter project. 
+
 def getInput(): # Get Input & Export As: [[15, 87], [10, 55], [11, 40], [4, 16]] | (examPoints, exerciseQty)
     student_values = []
 
@@ -112,7 +115,7 @@ def formatted(gradeValList, gradeLetterFinal, student_values, exercisePoints): #
 
 
 def main():
-    inputs = getInput()# [[20, 100], [10, 10], [9, 100], [15, 75], [18,40]] 
+    inputs = getInput() # @TestString1: [[20, 100], [10, 10], [9, 100], [15, 75], [18,40]] 
     findExercisePoints = getExercisePoints(inputs)
     findGradeVal = getGradeVal(inputs, findExercisePoints)
     findGradeLetterFinal = getGradeLetter(findGradeVal)
