@@ -5,8 +5,6 @@
 ### - Iterating on a specific condition | Escaping on a specific index (Resolved with Discord review on Modulo %)
 ### - 
 ### - 
-
-
 # Quick intro on string conversion
 # Utilize dir() for help in the python console
 
@@ -134,139 +132,29 @@ def instructor_second_word(mjono):
 def instructor_last_word(mjono):
     return instructor_find_word(mjono, 0)
 
-if __name__ == "__main__":
-    spruce(5)
-    SimpleSomethingModulo(10, 1)
-    SimpleSomethingModulo(6, 1)
-
-
-#Lists Exercises
-my_list: int = list[int]
-seconds_list: int = list[int]
-
-my_list = [1,2,3,4,5]
-seconds_list = []
-
-while True:
-    index = int(input("Determine the list: "))
-
-    if index == -1:
-        break
-    
-    elif index == 1:
-        newVal = int(input("New value: "))
-        my_list.append(newVal)
-        print(my_list) 
-    
-    elif index == 2:     
-        newVal = int(input("New value: "))
-        seconds_list.append(newVal)
-        print(seconds_list)
-
-    elif index == -1:
-        break
-    
-    else:
-        print(f"My List: {my_list} | Seconds list: {seconds_list}")
-
-#Lists Exercises
-values = []
-i = 1
-
-while True:
-    
-    print(f"The list is now {values}")
-    inputChoice = input("a(d)d, (r)emove, e(x)it: ")
-    if inputChoice == 'd': #add
-        values.append(i)
-        i += 1
-    elif inputChoice == 'r': #remove
-        i -= 1
-        values.remove(i)
-    elif inputChoice == 'x': #exit
-        break
-
-print("Bye!")    
-
-# Same word twice exercise 
-counter = 0
-words = []
-
-while True:
-    word = input("Word: ")
-    if word not in words:
-        words.append(word)
-        counter += 1
-    elif word in words:
-        print(f"You typed in {counter} different words")
-        break
-
-
-# List / Ordered List
-currentList = []
-
-while True:
-    item = int(input("New item: "))
-    
-    if item == 0:
-        print("Bye!")
-        break
-    elif item != 0:
-        currentList.append(item)
-        orderedList = sorted(currentList)
-        print(f"The list now: {currentList}")
-        print(f"The list in order: {orderedList}")
-
-# Back to functions!
 
 def length(x):
     return len(x)
 
-if __name__ == "__main__":
-    my_list = [3, 6, -4]
-    result = length(my_list)
-    print(result)
-
-# Arithmetic mean
 def mean(my_list : int):
     result = sum(my_list) / len(my_list)
     return result
 
-if __name__ == "__main__":
-    my_list = [3, 6, -4]
-    result = mean(my_list)
-    print(result)
-
-# Range
 def range_of_list(my_list : list):
     greatest = max(my_list)
     smallest = min(my_list)
     rangeVal = greatest - smallest
     return rangeVal
 
-if __name__ == "__main__":
+
     my_list = [1, 2, 3, 4, 5]
     result = range_of_list(my_list)
     print("The range of the list is", result)
 
-# List integers from - to + 
-
-valinput = int(input("Please type in a positive integer: "))
-
-for i in range(-(valinput),valinput+1):
-    if i == 0:
-        i += 1
-    else:
-        print(i)
-        i += 1
-# Creates ... you guessed it... a list of stars
 def list_of_stars(intList):
     for intVal in intList:
         print(intVal * "*")
-if __name__ == "__main__":
-    list_of_stars([3,7,1,1,2])
-
-#anagrams
+    
 def anagrams(strVal1, strVal2):
     sortedList1 = sorted(strVal1)
     sortedList2 = sorted(strVal2)
@@ -274,19 +162,11 @@ def anagrams(strVal1, strVal2):
         return True
     else:
         return False
-#anagrams one liner
+
 def instructor_anagrams(string1: str, string2: str):
-    return sorted(string1) == sorted(string2)
+    return sorted(string1) == sorted(string2) #-Anagrams one liner
 
-if __name__ == "__main__":
-
-    print(anagrams("tame", "meta")) # True
-    print(anagrams("tame", "mate")) # True
-    print(anagrams("tame", "team")) # True
-    print(anagrams("tabby", "batty")) # False
-    print(anagrams("python", "java")) # False
-
-#Functioning Palindromes (attempt to not use __main__ v1)
+#Functioning Palindromes
 def getStringInput():
     strInput = input("Please type in a palindrome: ")        
     strValue = strInput
@@ -311,9 +191,12 @@ def main():
         elif palindromes(word) == False:
             print("that wasn't a palindrome")
             
-main() #<---------------Took an hour to notice what had happened. Even though the if code block had been omitted. 
-# This is still needed to  call the function in
-# Unique find on sum of positives: the ability to go left to right is slight inhibited from 
+main() 
+#<-Took an hour to notice what had happened without calling main().
+# Even though the if code block had been omitted from the exercise:
+# - This is still needed to  call the function in
+
+# Unique find on sum of positives: the ability to go left to right is slight inhibited w/ lists.  
 def sum_of_positives(intList):
 
     for x in intList[::-1]:
@@ -321,4 +204,121 @@ def sum_of_positives(intList):
             intList.remove(x)
     return sum(intList)
 
-# 
+def even_numbers(intList):
+    newList = []
+    for x in intList[::-1]:
+        if x % 2 == 0:
+            newList.append(x)
+    return sorted(newList)
+
+def list_sum(listIntA, listIntB):
+    resultsList = []
+    i = 0 
+    while i < len(listIntA):
+        results = listIntA[i] + listIntB[i]
+        resultsList.append(results)
+        i += 1
+    return resultsList
+
+def distinct_numbers(intList):
+    
+    uniqueList = []
+    i = 0 
+    for num in intList:
+        if num not in uniqueList:
+            uniqueList.append(num)
+    return uniqueList
+
+def length_of_longest(strList):
+    maxFind = 0
+    for x in strList:
+        if len(x) > maxFind:
+            maxFind = len(x)
+    return maxFind
+
+def shortest(strList):
+    minFind = 999
+    for x in strList:
+        if len(x) < minFind:
+            minFind = len(x)
+            minFound = x
+    return minFound
+
+def all_the_longest(strList):
+    longest = ""
+    longestList = []
+    maxFind = 0
+
+    for word in strList:
+        if len(word) >= len(longest):
+            longest = word
+            maxFind = len(longest)
+            longestList.append(longest)
+   
+        for word in longestList:
+            if len(word) < maxFind:
+                longestList.remove(word)
+            
+    return longestList
+
+def formatted(floatNumList):
+
+    modifiedList = []
+    for floater in floatNumList:
+        results = f"{floater:.2f}"
+        modifiedList.append(results)
+    return modifiedList
+
+def everything_reversed(strList):
+    newList = []
+    for strings in strList:
+        newList.insert(0,strings[::-1])
+    return (newList)
+
+def most_common_character(my_string):
+    char_count_max = ""
+    char_count_initial = 0
+    char_count = 0
+    for letter in my_string:
+        char_count = my_string.count(letter)             
+        if char_count > char_count_initial:
+            char_count_initial = char_count
+            char_count_max = letter
+    return char_count_max
+
+def no_vowels(my_string):
+    new_string = ""
+    vowels = 'aeiou'
+    for letter in my_string:
+        if letter not in vowels:
+            new_string += letter
+    return new_string
+
+def no_shouting(my_string):
+    no_uppers = []
+    for letter in my_string:
+        if letter.isupper() == False:
+            no_uppers.append(letter)
+    return no_uppers
+
+names =  [ "Larry", "Jean", "Katherine", "Paul" ]
+first_string = "abcdbde" # b
+second_string = "exemplaryelementary" #e
+my_string = "this is an example"
+my_list = [3, 2, 2, 1, 3, 3, 1]
+my_list_2 = ["ABC", "def", "UPPER", "ANOTHERUPPER", "lower", "another lower", "Capitalized"]
+
+a = [1,2,3]
+b = [7,8,9]
+
+for name in names:
+    print(f"{name:15} | {name:>15}")
+
+list_of_stars([3,7,1,1,2])
+print(list_sum(a,b))
+print(distinct_numbers(my_list)) # [1, 2, 3]
+print(no_vowels(my_string))
+print(most_common_character(first_string))
+print(most_common_character(second_string))
+pruned_list = no_shouting(my_list_2)
+print(pruned_list)
