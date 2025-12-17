@@ -1,22 +1,21 @@
 # https:/programming-25.mooc.fi/part-5
 
-def sum_of_row(my_matrix, row_no: int):
-    row = my_matrix[row_no]
-    row_sum = 0
-    for item in row:
-        row_sum += item
-    return row_sum
+def block_correct(sudoku:list, row_no:int, column_no:int):
+    pass
 
 
-def sum_of_column(my_matrix, column_no: int):
-    column_sum = 0
-    for row in my_matrix:
-        column_sum += row[column_no]
-    return column_sum
+sudoku = [
+  [9, 0, 0, 0, 8, 0, 3, 0, 0],
+  [2, 0, 0, 2, 5, 0, 7, 0, 0],
+  [0, 2, 0, 3, 0, 0, 0, 0, 4],
+  [2, 9, 4, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 7, 3, 0, 5, 6, 0],
+  [7, 0, 5, 0, 6, 0, 4, 0, 0],
+  [0, 0, 7, 8, 0, 3, 9, 0, 0],
+  [0, 0, 1, 0, 0, 0, 0, 0, 3],
+  [3, 0, 0, 0, 0, 0, 0, 0, 2]
+]
 
 
-m = [[4, 2, 3, 2], [9, 1, 12, 11], [7, 8, 9, 5], [2, 9, 15, 1]]
-my_sum = sum_of_row(m, 1)
-my_sum_2 = sum_of_column(m, 2)
-print(my_sum)
-print(my_sum_2)
+print(block_correct(sudoku, 0, 0))
+print(block_correct(sudoku, 1, 2))
