@@ -2,7 +2,7 @@
 ### Start Date:         12/16/2025
 ### Completion Date:    -
 ### Review / POW:
-### - 
+### - Sudoku Grid (Return: 01/01/2026)
 ### -
 ### -
 
@@ -106,6 +106,26 @@ def block_correct(sudoku: list[list[int]], row_no:int, column_no:int) -> bool:
         
     return True
 
+# Please write a function named sudoku_grid_correct(sudoku: list)
+
+#  - takes a two-dimensional array sudoku grid as its argument. 
+#  - function should use functions from the 3 previous exercises to determine whether the complete sudoku grid is filled in correctly. 
+#  - Copy the functions from the exercises above into your Python code file for this exercise.
+
+#   Checks:
+#  - 9x Rows, 
+#  - 9x Columns
+#  - 3x3x3 blocks in the grid. 
+
+#  - If all contain each of the numbers 1 to 9 at most once, return True. 
+#  - If a single one is filled in incorrectly, return False.
+
+#   Boxes to check: 
+#   (0, 0), (0, 3), (0, 6), 
+#   (3, 0), (3, 3), (3, 6), 
+#   (6, 0), (6, 3), (6, 6)
+
+
 
 def main():
 
@@ -164,3 +184,4 @@ def main():
 
 
 main()
+
