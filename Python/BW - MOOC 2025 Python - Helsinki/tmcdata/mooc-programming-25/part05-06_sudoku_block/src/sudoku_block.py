@@ -1,29 +1,30 @@
 def block_correct(sudoku:list, row_no:int, column_no:int):
-    
-    row_limit = sudoku[row_no+2]
-    column_limit = sudoku[row_no+2][column_no+2]
 
     row_check = False
     column_check = False
 
-    unique = []
-    for val in range(len(row_limit)):
-        if val in unique and val != 0:
-            return False
-        else:
-            unique.append(val)
-    row_check = True 
+    row_limit = sudoku[row_no+2]
+    block_limit = sudoku[row_no+2][column_no+2]
     
     unique = []
-    for row in sudoku:
+    for rowVal in row_limit:
+        if rowVal in unique and rowVal != 0:
+            return False
+        else:
+            unique.append(rowVal)
+        row_check = True
+    
+    unique = []
+    for rowVal in range(block_limit):
+        for columnVal in row_limit:
+            if columnVal in unique and columnVal != 0:
+                return False
+            else:
+                unique.append(columnVal)
 
-        if row[column_no] in unique and row[column_no] != 0:
-            return False
-        else:
-            unique.append(row[column_no])
-    return True
-    
-    if column_check == True and row_check == True:
+    column_check = True
+
+    if row_check == True and column_check == True:
         return True
     else:
         return False
