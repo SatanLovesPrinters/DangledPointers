@@ -1,37 +1,20 @@
 # https:/programming-25.mooc.fi/part-5
 # WIP: Escaping on the column index is becoming a strange issue. 
 
-def block_correct_v02(sudoku:list, row_no:int, column_no:int):
+def block_correct(sudoku: list[list[int]], row_no:int, column_no:int) -> bool :
 
-    row_check = False
-    column_check = False
+    values = []
+    for column in range(column_no, column_no + 3):
+        for row in range(row_no, row_no + 3):
+            value = sudoku[row][column]
+            if value > 0:
+                if value in values:
+                    return False
+                values.append(value)
+        
+    return True
 
-    row_limit = sudoku[row_no+2]
-    block_limit = sudoku[row_no+2][column_no+2]
-    
-    unique = []
-    for rowVal in row_limit:
-        if rowVal in unique and rowVal != 0:
-            row_check = False
-            break
-        else:
-            unique.append(rowVal)
-    row_check = True
-    
-    unique = []
-    for rowVal in range(block_limit):
-        for columnVal in row_limit:
-            if columnVal in unique and columnVal != 0:
-                return False
-            else:
-                unique.append(columnVal)
 
-    column_check = True
-
-    if row_check == True and column_check == True:
-        return True
-    else:
-        return False
 
 
 sudoku = [
