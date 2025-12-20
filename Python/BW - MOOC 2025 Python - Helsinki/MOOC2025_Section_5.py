@@ -125,6 +125,20 @@ def block_correct(sudoku: list[list[int]], row_no:int, column_no:int) -> bool:
 #   (3, 0), (3, 3), (3, 6), 
 #   (6, 0), (6, 3), (6, 6)
 
+def double_items(numbers: list[int]) -> list[int]: 
+    
+    new_list = []
+    for val in numbers:
+        new_list.append(val*2)
+    return new_list
+
+ 
+def remove_smallest(numbers: list[int]):
+        
+    minVal = min(numbers)
+    for val in numbers:
+        if val == minVal:
+            numbers.remove(val)   
 
 
 def main():
@@ -183,5 +197,13 @@ def main():
     print(column_correct(sudoku, 0))
 
 
-main()
 
+if __name__ == "__main__":
+    numbers = [2, 4, 5, 3, 11, -4]
+    numbers_doubled = double_items(numbers)
+    print("original:", numbers)
+    print("doubled:", numbers_doubled)
+    numbers = [2, 4, 6, 1, 3, 5]
+    remove_smallest(numbers)
+    print(numbers) 
+    main()
