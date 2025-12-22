@@ -1,28 +1,17 @@
-def solution(s:str):
-    sNew = []
-    filler = ["_"]
-    results = []
-    sNew = s.split()
-    incr = 2
-    together = []
-    i = 0
+def count(s):
+    #counting with no OOP
+    alphabetStrLower = ['a','b','c','d','e','f','g','h','i',
+                          'j','k','l','m','n','o','p','q','r',
+                             's','t','u','v','w','x','y','z']
 
-    if len(s) % 2 == 1:
-        combined = sNew + filler
-        together = "".join(combined)
+    alphabetStrUpper = ['A','B','C','D','E','F','G','H','I',
+                          'J','K','L','M','N','O','P','Q','R',
+                             'S','T','U','V','W','X','Y','Z']
+    counter = 0
+    for letter in alphabetStrLower:
+        if letter in s:
+            counter = alphabetStrLower.count(letter)
 
-        while i < len(together):
-            results.append(together[i:i+2])
-            i+=2
-        return results
 
-    elif len(s) % 2 == 0:
-        while i < len(s):
-            results.append(s[i:i + 2])
-            i += 2
-        return results
-    else:
-        return 0
 
-print(solution('abc'))
-print(solution('abcdef'))
+print(count('aba'))
