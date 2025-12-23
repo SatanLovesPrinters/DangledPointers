@@ -4,3 +4,4 @@
 # merge note: we now allow .txt
 
 *.vs
+*.idea
