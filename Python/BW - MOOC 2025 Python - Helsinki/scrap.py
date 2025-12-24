@@ -1,11 +1,17 @@
-from collections import Counter
+def square_digits(num):
+    #9119 = 81-1-1-81
+    #{9**2}-{1**2}-{1**2}-{9**2} 
 
-def delete_nth(order,max_e):
-    c = Counter(order)
-    counts = [c]
-    val_list = list(counts)
-    print(val_list)
-   
+    digits = [int(digit) for digit in str(num)]
+    squaredList = []
+    result = []
 
+    for digit in digits:
+        squaredList.append(digit**2)
+        result = str(squaredList)
+    for element in squaredList:
+        "-".join(element)
 
-delete_nth([20, 37, 20, 21], 1)
+    return squaredList
+
+print(square_digits(9119))
