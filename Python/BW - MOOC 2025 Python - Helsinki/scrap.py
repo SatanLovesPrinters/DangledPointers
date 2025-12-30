@@ -1,17 +1,13 @@
-def square_digits(num):
-    #9119 = 81-1-1-81
-    #{9**2}-{1**2}-{1**2}-{9**2} 
+def friend(x):
+    #check for names that are 4 characters in length
+    results = []
+    i = 0
+    while i < len(x):
+        if len(x[i]) == 4:
+            results.append(x[i])
+            i+=1
+        else:
+            i+=1
+    return results
 
-    digits = [int(digit) for digit in str(num)]
-    squaredList = []
-    result = []
-
-    for digit in digits:
-        squaredList.append(digit**2)
-        result = str(squaredList)
-    for element in squaredList:
-        "-".join(element)
-
-    return squaredList
-
-print(square_digits(9119))
+print(friend(["Jeff", "Squid", "Soccer", "Chec"]))
