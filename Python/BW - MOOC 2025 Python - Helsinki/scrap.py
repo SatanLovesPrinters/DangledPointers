@@ -1,13 +1,4 @@
-def friend(x):
-    #check for names that are 4 characters in length
-    results = []
-    i = 0
-    while i < len(x):
-        if len(x[i]) == 4:
-            results.append(x[i])
-            i+=1
-        else:
-            i+=1
-    return results
+def fake_bin(x):
 
-print(friend(["Jeff", "Squid", "Soccer", "Chec"]))
+   newX = x.replace('1', '0').replace('2', '0').replace('3', '0').replace('4', '0').replace('5', '1').replace('6', '1').replace('7', '1').replace('8', '1').replace('9', '1')
+   return newX
