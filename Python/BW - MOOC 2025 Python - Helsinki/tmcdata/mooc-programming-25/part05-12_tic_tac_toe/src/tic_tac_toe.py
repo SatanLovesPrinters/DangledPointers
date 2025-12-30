@@ -1,14 +1,21 @@
-def play_turn(game_board: list, x: int, y: int, piece: str):
-    #Coords of Tic Tac Toe
-    #(i,j)
-    #(0,0)(0,1)(0,2)
-    #(1,0)(1,1)(1,2)
-    #(2,0)(2,1)(2,2)
-    pass
+def play_turn(game_board: list, x:int, y: int, piece: str):
+    
+    if x < 0:
+        return False
+    if x > 2:
+        return False
+    if y < 0:
+        return False
+    if y > 2:
+        return False
 
+    while 0 <= x < 3 and 0 <= y < 3:
+        if game_board[x][y] == '':
+            game_board[x][y] = piece
+            return True
 
-game_board = [["", "", ""], 
-              ["", "", ""], 
-              ["", "", ""]]
-print(play_turn(game_board, 2, 0, "X"))
-print(game_board)
+        elif game_board[x][y] == piece:
+            return False
+        else:
+            return False
+
